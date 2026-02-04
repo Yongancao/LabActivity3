@@ -23,10 +23,11 @@ class MainActivity : AppCompatActivity() {
 
         
         findViewById<Button>(R.id.clickMeButton).setOnClickListener {
-            if (nameEditText.text.isBlank()) {
-                displayTextView.setText("Error no name entered")
-            } else {
+            if (nameEditText.text.isNotEmpty()) {
                 displayTextView.text = "Hello, ${nameEditText.text}"
+            } else {
+                displayTextView.setText("Error: Please enter name!")
+
             }
         }
 
